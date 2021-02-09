@@ -1,0 +1,425 @@
+/*=====main CSS, extra small devices (phones, 600px and down)=====*/
+/*================*
+ *=====GLOBAL=====*
+ *================*/
+ :root {
+    /* color */
+    --main-color: rgb(53, 38, 0);
+    --article-background-color: #ece6d5;
+    --article-text-color: var(--main-color);
+    --article-link-color: #843000;
+    --article-link-box-shadow: var(--main-color);
+    --article-link-hover-color: white;
+    --header-title-background: rgb(255, 255, 255);
+    --footer-background-color: rgb(23, 21, 16);
+    --footer-text-color: rgb(208, 151, 6);
+    --footer-link-hover-color: white;
+    /* size */
+    --header-height: 240px;
+    --header-img-container: 180px;
+}
+/*=====selection=====*/
+::selection {
+   color: var(--article-background-color);
+   background: var(--main-color);
+ }
+ /*=====scrollbar=====*/
+::-webkit-scrollbar {
+    width: 10px;
+  }  
+::-webkit-scrollbar-track {
+    background: var(--article-background-color); 
+  }
+::-webkit-scrollbar-thumb {
+    background: var(--footer-background-color); 
+  }
+::-webkit-scrollbar-thumb:hover {
+    background:var(--article-link-color); 
+  }  
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+html {
+   font-size: 10px;
+}
+body {
+   width: 100%;
+   background-color: var(--article-background-color);  
+   color: var(--article-text-color); 
+   font-size: 1.6rem;
+   line-height: 2.2rem;
+   font-family: 'Open Sans', Verdana, sans-serif;    
+}
+a {
+   text-decoration: none;
+   color: var(--article-link-color);
+   box-shadow: inset 0px 0px var(--article-link-box-shadow);
+   transition: box-shadow .2s ease-in, color .005s ease 0.2s;
+}
+a:not([href*="turwaith"]):hover {
+   color: var(--article-link-hover-color);
+   box-shadow: inset 0px -1.9rem var(--article-link-box-shadow);
+}
+a i[class^="fab"] {
+   padding: 0 15px;
+   color: var(--footer-text-color);
+   transition: color .1s ease;
+}
+a i[class^="fab"]:hover {
+   color: var(--footer-link-hover-color);
+}
+/*================*
+*=====HEADER=====*
+*================*/
+header {
+   position: relative;
+   background: url(img/map.jpg) fixed;
+   background-size: cover;    
+   height: var(--header-height);  
+}
+h1 {
+   position: relative;
+   top: 5vh;
+   width: 80vw;
+   margin: 0 auto;
+   padding: 3vh 0;
+   text-align: center;   
+   mix-blend-mode: screen;     
+   background-color: var(--header-title-background);    
+   font-size: 3.3rem;
+}
+h1 span {
+   display: block;
+   margin-top: 3vh;
+   font-size: 2rem;
+   letter-spacing: 3px;
+}
+.main-img-container { 
+   position: absolute;
+   top: 100%; 
+   left: 50%;
+   transform: translate(-50%, -50%);
+   margin: 0 auto; 
+   width: var(--header-img-container); 
+   filter: drop-shadow(0 4px 8px rgb(39, 39, 39)); 
+}
+.main-img {   
+   margin: 0 auto;
+   display: block;
+   max-width: 100%;   
+   height: auto;
+   border-radius: 50%;
+   border: 5px solid #ece4d0;
+}
+.main-img + figcaption {
+   position: absolute;
+   left: -9999px;
+   width: 1px;
+   height: 1px;
+}
+/*==============*
+*=====MAIN=====*
+*==============*/
+main {              
+   margin: 0 auto;       
+   padding: calc((var(--header-img-container) / 2) + 5vh) 0 6vh 0; 
+} 
+h2 {    
+   text-align: center;
+   margin: 0 0 9vh 0;
+   font-size: 3rem;
+} 
+h3 {
+   position: relative;
+   font-size: 2.1rem;
+   padding: 8vh 0 0 25vw; 
+}  
+h3::after {
+   content: "";
+   position: absolute; 
+   top: calc(8vh + 1.05rem + 1px); /* middle of h3 line */
+   left: 3vw;
+   width: 20vw;
+   height: 2px;
+   background-color: var(--article-link-color);
+}
+p {
+   padding: 1.5vh 2vw;
+}
+.tribute-img-container { 
+   position: relative;       
+   width: 40vw;
+   margin: 5vh auto;
+   filter: drop-shadow(4px 0 5px rgb(110, 110, 110))
+           drop-shadow(0 4px 5px rgb(110, 110, 110))
+           drop-shadow(0 -1px 2px rgb(200,200,200))
+           drop-shadow(-1px 0 2px rgb(200,200,200));
+}
+.tribute-img-container:last-of-type {
+    margin-bottom: 0;
+}
+.tribute-img {
+   display: block;
+   max-width: 100%;
+   height: auto;   
+   border-radius: 8px;
+}
+.tribute-img-container figcaption {
+   position: absolute;
+   bottom: 5vw;
+   left: -3.3vw;      
+   width: 100%;  
+   font-size: 1.2rem; 
+   line-height: 1.5rem;
+   padding: 5px 10px;
+   color: var(--article-link-color);   
+   background-color: var(--article-background-color);
+}
+/*================*
+*=====FOOTER=====*
+*================*/
+footer {           
+   margin: 0 auto;
+   padding: 4vh 0 2.5vh 0; 
+   width: inherit;
+   text-align: center;
+   background-color: var(--footer-background-color);
+   color: var(--footer-text-color);
+}
+/*===============*
+*=====MEDIA=====*
+*===============*/
+/*=====Small devices (portrait tablets and large phones, 600px and up)=====*/
+@media only screen and (min-width: 600px) {
+   :root {
+    /* size */
+    --header-height: 210px;
+    --header-img-container: 180px;
+   }
+   header {
+       height: var(--header-height);  
+   }   
+   main {              
+       margin: 0 auto;       
+       padding: calc((var(--header-img-container) / 2) + 5vh) 0 6vh 0; 
+   } 
+   h2 {    
+    margin: 0 0 12vh 0;
+ } 
+   h3 {
+    padding-bottom: 8vh; 
+ } 
+   p {
+       padding: 3vh 10vw;
+   }
+   .tribute-img-right {
+       float: right;
+       margin: 0 10vw 0 3vw;
+   }
+   .tribute-img-left {
+       float: left;
+       margin: 0 3vw 0 10vw;
+   }
+   .tribute-img-container {        
+       width: 18vw;
+       margin-top: 2vh;
+   }
+}
+/*=====Medium devices (landscape tablets, 768px and up)=====*/
+@media only screen and (min-width: 768px) {
+   :root {
+       /* size */
+       --header-height: 400px;
+       --header-img-container: 280px;
+   }
+   body {
+       font-size: 2rem;
+       line-height: 2.6rem;   
+   }
+   header {
+       height: var(--header-height);  
+   } 
+   h1 {
+       top: 6vh;
+       width: 80vw;
+       padding: 3vh 0;   
+       font-size: 5rem;
+       line-height: 4rem;
+   }
+   h1 span {
+       font-size: 2.8rem;
+       letter-spacing: 2px;
+   }
+   main {              
+       margin: 0 auto;       
+       padding: calc((var(--header-img-container) / 2) + 5vh) 0 6vh 0;  
+   }
+   h2 {
+       font-size: 4.5rem;
+   }
+   h3 {
+       padding-bottom: 4vh;
+       font-size: 3rem;
+   }
+   p {
+       padding: 1vh 7vw;
+   } 
+   .tribute-img-right {
+       float: right;
+       margin: 0 7vw 0 3vw;
+   }
+   .tribute-img-left {
+       float: left;
+       margin: 0 3vw 0 7vw;
+   }
+   .tribute-img-container {        
+       width: 25vw;
+       margin-top: 2vh;
+       margin-bottom: 1vh;
+   }   
+   .tribute-img-container figcaption {       
+       font-size: 1.5rem; 
+       line-height: 1.5rem;
+             
+   }
+}
+/*=====Large devices (laptops/desktops, 992px and up)=====*/
+@media only screen and (min-width: 992px) {
+   :root {
+       /* size */
+       --header-height: 400px;
+       --header-img-container: 230px;
+   }
+   body {
+       font-size: 1.6rem;
+       line-height: 2.2rem;   
+   }
+   header {
+       height: var(--header-height);  
+   } 
+   h1 {
+       top: 5vh;
+       width: 80vw;
+       padding: 5vh 0;   
+       font-size: 6rem;
+       line-height: 3rem;
+   }
+   h1 span {
+       font-size: 2.5rem;
+       letter-spacing: 3px;
+   }
+   main {              
+       margin: 0 auto;       
+       padding: calc((var(--header-img-container) / 2) + 5vh) 0 6vh 0; 
+   }
+   h3 {
+       padding-left: 24vw;
+   }
+   h3::after {
+    left: 2vw;
+ }
+   p {
+       padding: 3vh 8vw;
+   }
+   .tribute-img-right {
+       float: right;
+       margin: 0 8vw 0 3vw;
+   }
+   .tribute-img-left {
+       float: left;
+       margin: 0 3vw 0 8vw;
+   }
+   .tribute-img-container {        
+       width: 15vw;
+       margin-top: 2vh;
+       margin-bottom: 1vh;
+   }   
+   .tribute-img-container figcaption {       
+       font-size: 1.5rem; 
+       line-height: 1.5rem;              
+   }    
+}
+/*=====Extra large devices (large laptops and desktops, 1200px and up)=====*/
+@media only screen and (min-width: 1200px) {
+   :root {
+       /* size */
+       --header-height: 480px;
+       --header-img-container: 220px;
+   }
+   body {    
+       font-size: 1.8rem;
+       line-height: 2.2rem;   
+   }
+   header {
+       border: 5px solid var(--article-background-color);
+       height: var(--header-height);  margin: 0 auto;
+   } 
+   h1 {
+       top: 9vh;
+       width: 40vw;
+       padding: 6vh 0;   
+       font-size: 6rem;
+       line-height: 3.7rem;
+   }
+   h1 span {
+       font-size: 2.9rem;
+       letter-spacing: 3px;
+   }
+   main {
+       width: 70%;
+       padding: calc((var(--header-img-container) / 2) + 5vh) 0 6vh 0; 
+   }
+   h2 {    
+       padding: 0 0 6vh 0;
+       font-size: 3.8rem;
+   } 
+   h3 {
+       position: relative;
+       clear: both;
+       font-size: 2.6rem;
+       padding: 8vh 0 5vh 11vw; 
+   }  
+   h3::after {
+       content: "";
+       position: absolute; 
+       top: calc(8vh + 1.05rem + 1px); /* middle of h3 line */
+       left: 3vw;
+       width: 7vw;
+       height: 2px;
+       background-color: var(--article-link-color);
+   }
+   main {              
+       margin: 0 auto;       
+       padding: 20vh 0 6vh 0; 
+   }
+   p {
+       padding: 2vh 8vw;
+   }
+   .tribute-img-right {
+       float: right;
+       margin: 0 8vw 0 1.5vw;
+   }
+   .tribute-img-left {
+       float: left;
+       margin: 0 1.5vw 0 8vw;
+   }
+   .tribute-img-container {        
+       width: 10vw;
+       margin-top: 2vh;
+       margin-bottom: 1vh; 
+   }
+   .tribute-img-container:last-of-type {
+       margin-top: 9vh;
+   }   
+   .tribute-img-container figcaption {  
+       bottom: 3vh;    
+       left: -1vw;      
+       font-size: 1.3rem; 
+       line-height: 1.3rem;             
+   }
+   footer {
+       border: 5px solid var(--article-background-color);
+   }
+}
